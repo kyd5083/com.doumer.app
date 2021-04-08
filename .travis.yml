@@ -1,7 +1,6 @@
 language: java
-dist: trusty
 jdk:
-  - opnejdk8
+  - openjdk8
 
 branches:
   only:
