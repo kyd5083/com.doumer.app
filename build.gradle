@@ -18,6 +18,10 @@ test { // (2)
     useJUnitPlatform()
 }
 
+bootJar {
+    mainClassName = 'com.doumer.app.springboot.Application'
+}
+
 dependencies {
     //(3)
     implementation('org.springframework.boot:spring-boot-starter-web')
@@ -29,9 +33,9 @@ dependencies {
     testImplementation('org.projectlombok:lombok')
     testAnnotationProcessor('org.projectlombok:lombok')
 
-    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa') //Spring Data Jpa 추상화 라이브러리
     implementation("org.mariadb.jdbc:mariadb-java-client")
-    implementation('com.h2database:h2')
+    implementation('com.h2database:h2')//인메모리 관계형 데이터베이스, 별도의 설치 필요없음, 간단한 테스트용
 
     implementation('org.springframework.boot:spring-boot-starter-oauth2-client') // 권한 관련
     implementation('org.springframework.session:spring-session-jdbc') // 권한 관련
